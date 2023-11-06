@@ -1,0 +1,32 @@
+h1 {
+	font-size: 21px;
+	font-weight: 700;
+	letter-spacing: -2.075px;
+}
+
+nav {
+	color: #fff;
+	height: 65px;
+	background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+	padding-left: 20px;
+	padding-right: 36px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header--logo-container {
+	display: flex;
+	align-items: center;
+}
+
+.header--img {
+	width: 31px;
+	margin-right: 8px;
+}
+
+.header--course-info {
+	font-family: Inter;
+	font-size: 12px;
+	font-weight: 500;
+}
