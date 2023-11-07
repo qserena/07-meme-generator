@@ -1,10 +1,10 @@
-h1 {
-	font-size: 21px;
+h2 {
+	font-size: 1.25rem;
 	font-weight: 700;
 	letter-spacing: -2.075px;
 }
 
-nav {
+header {
 	color: #fff;
 	height: 65px;
 	background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
@@ -26,7 +26,49 @@ nav {
 }
 
 .header--course-info {
-	font-family: Inter;
-	font-size: 12px;
+	/* font-family: Inter; */
+	font-size: 0.75rem;
 	font-weight: 500;
+}
+
+main {
+	padding: 36px 36px 55px 36px;
+}
+
+.form {
+	display: grid;
+	grid-template: 40px 40px / 1fr 1fr;
+	gap: 17px;
+}
+
+input {
+	height: 35px;
+	border-radius: 5px;
+	border: 1px solid #d5d4d8;
+	color: #0d0d0d;
+	font-family: 'Karla', sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	text-indent: 8px;
+}
+
+button {
+	height: 40px;
+	border-radius: 5px;
+	border: none;
+	background: linear-gradient(90deg, #711f8d 1.14%, #a818da 100%);
+	color: #fff;
+	text-align: center;
+	font-family: 'Karla', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: -1.6px;
+	grid-column: 1 / -1;
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+
+.meme-image {
+	margin-top: 36px;
+	width: 100%;
 }
