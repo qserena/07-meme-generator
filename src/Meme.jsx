@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import defaultImage from '../memeimg.png'
+import defaultImage from './memeimg.png'
 import memes from '../memesData.js'
 
 export default function Meme() {
