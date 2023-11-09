@@ -1,15 +1,23 @@
 import { useState } from 'react'
-import defaultImage from '../public/memeimg.png'
+import defaultImage from '../memeimg.png'
 import memes from '../memesData.js'
 
 export default function Meme() {
-	const [memeImage, setMemeImage] = useState(defaultImage)
+	const [meme, setMeme] = useState({
+		topText: '',
+		bottomText: '',
+		randomImage: defaultImage,
+	})
+	const [allMemeImages, setAllMemeImages] = useState(memes)
 
 	function getMemeImage() {
-		const memesArray = memes.data.memes
+		const memesArray = allMemeImages.data.memes
 		const index = Math.floor(Math.random() * memesArray.length)
 		const url = memesArray[index].url
-		setMemeImage(url)
+		setMeme((prevMeme) => ({
+			...prevMeme,
+			randomImage: url,
+		}))
 		console.log(url)
 	}
 	return (
@@ -19,7 +27,11 @@ export default function Meme() {
 				<input type="text" placeholder="Bottom text" />
 				<button onClick={getMemeImage}>Get a new meme image 🖼</button>
 			</div>
-			<img src={memeImage} alt="Meme image" className="meme-image" />
+			<img
+				src={meme.randomImage}
+				alt="Meme image"
+				className="meme--image"
+			/>
 		</main>
 	)
 }
