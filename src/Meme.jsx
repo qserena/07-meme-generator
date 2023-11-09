@@ -1,37 +1,65 @@
-import { useState } from 'react'
-import defaultImage from './memeimg.png'
-import memes from '../memesData.js'
+import { useState, useEffect } from 'react'
 
 export default function Meme() {
 	const [meme, setMeme] = useState({
 		topText: '',
 		bottomText: '',
-		randomImage: defaultImage,
+		randomImage: 'http://i.imgflip.com/1bij.jpg',
 	})
-	const [allMemeImages, setAllMemeImages] = useState(memes)
+
+	const [allMemes, setAllMemes] = useState([])
+
+	useEffect(() => {
+		fetch('https://api.imgflip.com/get_memes')
+			.then((response) => response.json())
+			.then((result) => setAllMemes(result.data.memes))
+	}, [])
 
 	function getMemeImage() {
-		const memesArray = allMemeImages.data.memes
-		const index = Math.floor(Math.random() * memesArray.length)
-		const url = memesArray[index].url
+		const index = Math.floor(Math.random() * allMemes.length)
+		const url = allMemes[index].url
 		setMeme((prevMeme) => ({
 			...prevMeme,
 			randomImage: url,
 		}))
-		console.log(url)
 	}
+
+	function handleChange(e) {
+		const { name, value } = e.target
+		setMeme((prevMeme) => ({
+			...prevMeme,
+			[name]: value,
+		}))
+	}
+
 	return (
 		<main>
 			<div className="form">
-				<input type="text" placeholder="Top text" />
-				<input type="text" placeholder="Bottom text" />
+				<input
+					type="text"
+					placeholder="Top text"
+					name="topText"
+					value={meme.topText}
+					onChange={handleChange}
+				/>
+				<input
+					type="text"
+					placeholder="Bottom text"
+					name="bottomText"
+					value={meme.bottomText}
+					onChange={handleChange}
+				/>
 				<button onClick={getMemeImage}>Get a new meme image 🖼</button>
 			</div>
-			<img
-				src={meme.randomImage}
-				alt="Meme image"
-				className="meme--image"
-			/>
+			<div className="meme">
+				<img
+					src={meme.randomImage}
+					alt="Meme image"
+					className="meme--image"
+				/>
+				<h2 className="meme--text top">{meme.topText}</h2>
+				<h2 className="meme--text bottom">{meme.bottomText}</h2>
+			</div>
 		</main>
 	)
 }
