@@ -15,9 +15,12 @@ export default function Meme() {
 			.then((result) => setAllMemes(result.data.memes))
 	}, [])
 
-	function getMemeImage() {
+	function getMemeImage(e) {
+		e.preventDefault()
+		console.log('url')
 		const index = Math.floor(Math.random() * allMemes.length)
 		const url = allMemes[index].url
+		console.log(url)
 		setMeme((prevMeme) => ({
 			...prevMeme,
 			randomImage: url,
@@ -34,23 +37,32 @@ export default function Meme() {
 
 	return (
 		<main>
-			<div className="form">
-				<input
-					type="text"
-					placeholder="Top text"
-					name="topText"
-					value={meme.topText}
-					onChange={handleChange}
-				/>
-				<input
-					type="text"
-					placeholder="Bottom text"
-					name="bottomText"
-					value={meme.bottomText}
-					onChange={handleChange}
-				/>
+			<form className="form">
+				<div>
+					<label className="form--label">Top text</label>
+					<input
+						type="text"
+						placeholder="Shut up"
+						name="topText"
+						value={meme.topText}
+						onChange={handleChange}
+						className="form--input"
+					/>
+				</div>
+				<div>
+					<label className="form--label">Bottom text</label>
+					<input
+						type="text"
+						placeholder="and take my money"
+						name="bottomText"
+						value={meme.bottomText}
+						onChange={handleChange}
+						className="form--input"
+					/>
+				</div>
+
 				<button onClick={getMemeImage}>Get a new meme image 🖼</button>
-			</div>
+			</form>
 			<div className="meme">
 				<img
 					src={meme.randomImage}
