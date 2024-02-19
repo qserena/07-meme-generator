@@ -1,8 +1,19 @@
-# React + Vite
+# Meme Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This app fetches a random image from 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br/>
+<img src="img/readme-screenshot.png" alt="Screenshot of website." width="600px"/>
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
+
+## Live link
+The application is deployed here:
+[https://zesty-centaur-5eda91.netlify.app](https://zesty-centaur-5eda91.netlify.app)
+
+Please feel free to click around and explore!
