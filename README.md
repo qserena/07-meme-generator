@@ -1,7 +1,7 @@
 # Meme Generator
 
 ## Description
-This app fetches a random image from the [Imgflip API](https://imgflip.com/api)) and let you create your own meme by combine the image with your own text.
+This app fetches a random image from the [Imgflip API](https://imgflip.com/api) and let you create your own meme by combine the image with your own text.
 
 <br/>
 <img src="screenshot.png" alt="Screenshot of website." width="600px"/>
