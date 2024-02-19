@@ -3,9 +3,8 @@
 ## Description
 This app fetches a random image from 
 
-
 <br/>
-<img src="img/readme-screenshot.png" alt="Screenshot of website." width="600px"/>
+<img src="screenshot.png" alt="Screenshot of website." width="600px"/>
 
 ## Technologies
 - HTML
