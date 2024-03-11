@@ -17,10 +17,10 @@ export default function Meme() {
 
 	function getMemeImage(e) {
 		e.preventDefault()
-		console.log('url')
+
 		const index = Math.floor(Math.random() * allMemes.length)
 		const url = allMemes[index].url
-		console.log(url)
+
 		setMeme((prevMeme) => ({
 			...prevMeme,
 			randomImage: url,
